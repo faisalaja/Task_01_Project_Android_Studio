@@ -5,11 +5,12 @@ class Persegi {
     fun print() {
         var sisi = 0
 
-        println("BANGUN DATAR - PERSEGI\n")
+        println("BANGUN DATAR - PERSEGI")
         print("Masukkan Nilai sisi : ")
         readLine()?.toInt()?.let {
             sisi = it
         }
         println("Hasil Persegi Adalah: ${sisi.toDouble() * sisi.toDouble()}")
+        println(">>>>>>>>>>>>>END<<<<<<<<<<<<<<")
     }
 }

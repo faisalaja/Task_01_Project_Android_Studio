@@ -3,4 +3,5 @@
  */
 fun main() {
     Persegi().print()
+    PersegiPanjang().print()
 }
