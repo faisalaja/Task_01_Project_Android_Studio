@@ -17,6 +17,6 @@ class PersegiPanjang {
             lebar = it
         }
 
-        print("Total : ${panjang.times(lebar)}")
+        print(panjang.compareTo(lebar))
     }
 }
