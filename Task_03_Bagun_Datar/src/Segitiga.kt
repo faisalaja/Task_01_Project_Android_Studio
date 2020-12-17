@@ -1,22 +1,29 @@
 /**
  * Create by Muhammad Al Faisal on 12/14/20, 2020
+ *
+ * Implementation NASTED FUNCTION and access modifier
  */
-class PersegiPanjang {
-    var panjang = 0
-    var lebar = 0
+class Segitiga {
+    private var p: Double = 0.0
+    private var t: Double = 0.0
+    private var luas: Double = 0.0
+
+    fun insertValue(panjang: Int, tinggi: Int) {
+        p = panjang.toDouble()
+        t = tinggi.toDouble()
+
+        luas = 0.5 * p * t
+
+        //print value
+        print()
+    }
 
     fun print() {
-        println("")
-        println("BANGUN DATAR - PERSEGI")
-        print("Massukkan Nilai Panjang: ")
-        readLine()?.toInt()?.let {
-            panjang = it
-        }
-        print("Massukkan Nilai Lebar: ")
-        readLine()?.toInt()?.let {
-            lebar = it
-        }
-
-        print(panjang.compareTo(lebar))
+        println("Total Luas Segitiga adalah: $luas")
     }
+}
+
+fun main() {
+    var segitiga = Segitiga()
+    segitiga.insertValue(50, 10)
 }
