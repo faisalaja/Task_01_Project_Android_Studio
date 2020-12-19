@@ -1,0 +1,46 @@
+BEGIN
+    DECLARE ARRAY items = 'GUNTING, BATU, KERTAS'
+    DECLARE ARRAY position = '1, 2, 3'
+    DECLARE STRING selected = ''
+
+    DECLARE INTEGER PLAYER1
+    DECLARE INTEGER PLAYER2
+    DECLATE WIN = ''
+
+    DECLARE INTEGER pointP1 = 0
+    DECLARE INTEGER pointP2 = 0
+    DECLARE STRING message = ''
+
+    GET position
+    selected = items[position]
+    PLAYER1 =  selected
+
+    GET position
+    selected = items[position]
+    PLAYER2 = selected
+
+    if PLAYER1 = items[position] == PLAYER2 = items[position]
+        message = 'DRAW'
+    ELSE
+        IF PLAYER1 = items[1] && PLAYER2 = items[2]
+            WIN = 'P2'
+        ELSEIF PLAYER1 = items[1]  && PLAYER2 = item[3]
+            WIN = 'P1'
+            pointP1 += 1
+        ELSEIF PLAYER1 = items[2] && PLAYER2 = items[3]
+            WIN = 'P2'
+            pointP2 += 1
+        ELSEIF PLAYER1 = items[2] && PLAYER2 = items[1]
+            WIN = 'P1'
+            pointP1 += 1
+        ENDIF
+
+        IF WIN == 'P1'
+            pointP1 += 1
+            message = 'P1 WINNER'
+        ELSEIF WIN == 'P2'
+            pointP2 += 1
+            message = 'P2 WINNER'
+        ENDIF
+    ENDIF
+END
