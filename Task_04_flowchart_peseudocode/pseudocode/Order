@@ -1,0 +1,13 @@
+BEGIN
+    DECLARE STRING productType = ""
+    DECLARE INT count = 0
+
+    SET productType = T-SHIRT
+
+    IF productType != NULL OR EMPTY
+        count = count + 8
+        SET DATABASE = SAVE ORDER count
+        PRINT popup "Order T-shirt dengan jumlah count Berhasil ditambahkan!"
+    ELSE
+        RETURN HomePage
+END
