@@ -1,46 +1,28 @@
 BEGIN
     DECLARE ARRAY items = 'GUNTING, BATU, KERTAS'
-    DECLARE ARRAY position = '1, 2, 3'
-    DECLARE STRING selected = ''
 
     DECLARE INTEGER PLAYER1
     DECLARE INTEGER PLAYER2
-    DECLATE WIN = ''
-
-    DECLARE INTEGER pointP1 = 0
-    DECLARE INTEGER pointP2 = 0
+    DECLARE STRING WIN = ''
     DECLARE STRING message = ''
+    DECLARE INTEGER POINT1 = 0
+    DECLARE INTEGER POINT2 = 0
 
-    GET position
-    selected = items[position]
-    PLAYER1 =  selected
+    PLAYER1 = INSERT VALUE
 
-    GET position
-    selected = items[position]
-    PLAYER2 = selected
+    PLAYER2 = items GET POSITION VALUE
 
     if PLAYER1 = items[position] == PLAYER2 = items[position]
         message = 'DRAW'
     ELSE
-        IF PLAYER1 = items[1] && PLAYER2 = items[2]
+        IF PLAYER1 = items[0] && PLAYER2 = items[1] OR PLAYER1 = items[2] && PLAYER2 = items[1] OR  items[1] && PLAYER2 = items[0]
             WIN = 'P2'
-        ELSEIF PLAYER1 = items[1]  && PLAYER2 = item[3]
+            POINT1 = +1
+        ELSEIF PLAYER1 = items[0]  && PLAYER2 = item[2] OR  PLAYER1 = items[2] && PLAYER2 = items[1] OR PLAYER1 = items[1] && PLAYER2 = items[0]
             WIN = 'P1'
-            pointP1 += 1
-        ELSEIF PLAYER1 = items[2] && PLAYER2 = items[3]
-            WIN = 'P2'
-            pointP2 += 1
-        ELSEIF PLAYER1 = items[2] && PLAYER2 = items[1]
-            WIN = 'P1'
-            pointP1 += 1
+            POINT1 = +1
         ENDIF
 
-        IF WIN == 'P1'
-            pointP1 += 1
-            message = 'P1 WINNER'
-        ELSEIF WIN == 'P2'
-            pointP2 += 1
-            message = 'P2 WINNER'
-        ENDIF
+        message = WIN + ' WIN!'
     ENDIF
 END
